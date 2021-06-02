@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,15 +35,20 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text(
                   "Winehouse",
-                  style: TextStyle(fontSize: 100, fontWeight: FontWeight.w800),
+                  style: TextStyle(
+                      fontSize: min(MediaQuery.of(context).size.height, MediaQuery.of(context).size.width) / 8, fontWeight: FontWeight.w800),
                 ),
-                SizedBox(height: 20),
-                Text("Coming soon", style: TextStyle(fontSize: 40, fontWeight: FontWeight.w300, color: Colors.grey))
+                SizedBox(height: min(MediaQuery.of(context).size.height, MediaQuery.of(context).size.width) / 30),
+                Text("Coming soon",
+                    style: TextStyle(
+                        fontSize: min(MediaQuery.of(context).size.height, MediaQuery.of(context).size.width) / 16,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.grey))
               ],
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Container(
                 alignment: Alignment.bottomLeft,
                 padding: EdgeInsets.all(5.0),
@@ -49,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Center(
                   child: Text(
                     '(주)와인하우스 Winehouse Inc. | 대표 : 권 경 호 | 서울특별시 구로구 디지털로 33길 48, 604호 (구로동, 대륭포스트타워 7차) | E-mail : admin@winehouse.io',
-                    style: TextStyle(color: Colors.grey[800], fontSize: 15),
+                    style:
+                        TextStyle(color: Colors.grey[800], fontSize: min(MediaQuery.of(context).size.height, MediaQuery.of(context).size.width) / 50),
                   ),
                 )),
           )
