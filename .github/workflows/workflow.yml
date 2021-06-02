@@ -2,7 +2,7 @@ name: Winehouse
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     name: Build Web
@@ -18,10 +18,10 @@ jobs:
       - run: flutter pub get
       - run: flutter build web --release
         # 1. change path which exist lib/main.dart
-        working-directory: /Users/dian/Work/Project/web-winehouse
+        working-directory: ./web-winehouse
       - run: |
           # 2. change path to [existed lib/main.dart path]/build/web
-          cd /Users/dian/Work/Project/web-winehouse/build/web
+          cd ./web-winehouse/build/web
           git init
            # 3. change your email
           git config --global user.email dian00hong@everytt.com
